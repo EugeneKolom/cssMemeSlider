@@ -1,0 +1,202 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  position: absolute; 
+  opacity: 0;
+  margin-top: 95vh;
+  cursor: pointer;
+}
+
+label {
+  position: absolute;
+  top: 90%;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: solid 2px lightskyblue;
+  border-radius: 999px;
+  background-color: lightskyblue;
+  margin: 0 6px 0 6px;
+  z-index: 2;
+  cursor: pointer;
+  transition-duration: .4s;
+  box-shadow: 0 0 20px 0 #000;
+}
+
+.label4{
+  right: 0;
+}
+.label3{
+  right: 5%;
+}
+.label2{
+  right: 10%;
+}
+.label1{
+  right: 15%;
+}
+
+input:checked + label{
+  background-color: transparent;
+}
+
+input + label:hover::after {
+  background-size: 90px 90px;
+}
+
+input:checked + label::after {
+  background-image: none;
+  width: 100vw;
+  left: 0;
+  z-index: 10;
+}
+
+input:checked + label + .slide ~ input + label::after {
+  display: none;
+}
+
+input:focus + label{
+  box-shadow: 0 0 18px white;
+}
+
+.slider-container{
+  background: #000;
+  width: 900px;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  position: relative;
+  margin-top: 30px;
+  height: 700px;
+  width: 800px;
+  transform: translateX(-10%);
+  transform: translateY(-10%);
+  overflow: hidden;
+}
+
+
+
+.bg1{
+  background-image: url(img/Бить\ будете\ папаша.jpg);
+  border-radius: 6%;
+
+}
+.bg2{
+  background-image: url(img/Весна.\ Коты\ прилетели.jpg);
+  border-radius: 6%;
+
+}
+.bg3{
+  background-image: url(img/Директор\ завода\ Вискас.jpeg);
+  border-radius: 6%;
+
+}
+.bg4{
+  background-image: url(img/Погладь\ котэ\,\ или\ он\ тебя.jpg);
+  border-radius: 6%;
+}
+
+.slide {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 800px;
+  height: 500px;
+  z-index: -1;
+  transition-duration: .4s;
+  opacity: 1;
+}
+
+.slide::after{
+  position: absolute;
+  top: 112%;
+  left: 0;
+}
+
+.bg1::after, .bg2::after, .bg3::after, .bg4::after{
+  font-size: 16px;
+  color: white;
+}
+
+input:checked ~ .slide {
+  transform: translateX(100%);
+  opacity: 1;
+}
+
+input:checked + label + .slide {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+input:checked + label + .bg1::after {
+  content: 'Бить будете папаша?';
+}
+input:checked + label + .bg2::after {
+  content: 'Весна. Коты прилетели';
+}
+input:checked + label + .bg3::after {
+  content: 'Директор завода Вискас';
+}
+input:checked + label + .bg4::after {
+  content: 'Погладь котэ, или он тебя';
+}
+
+label:hover {
+  background: white;
+  border: 2px solid white;
+}
+
+
+@media (max-width: 640px) {
+  .slider {
+    height: 700px;
+    width: 350px;
+  }
+
+  .slide {
+    width: 350px;
+    height: 200px;
+  }
+
+  label {
+    top: 48%;
+  }
+
+  .label4{
+    left: 60%;
+  }
+  .label3{
+    left: 53%;
+  }
+  .label2{
+    left: 46%;
+  }
+  .label1{
+    left: 39%;
+  }
+
+  .slide::after{
+    top: 110%;
+    left: 0;
+  }
+}
