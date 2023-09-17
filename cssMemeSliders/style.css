@@ -153,10 +153,10 @@ input:checked + label + .bg1::after {
   content: 'Бить будете папаша?';
 }
 input:checked + label + .bg2::after {
-  content: 'Весна. Коты прилетели';
+  content: 'Весна. Коты прилетели!';
 }
 input:checked + label + .bg3::after {
-  content: 'Директор завода Вискас';
+  content: 'Директор завода "Вискас"';
 }
 input:checked + label + .bg4::after {
   content: 'Погладь котэ, или он тебя';
