@@ -23,19 +23,28 @@ input {
 }
 
 label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 90%;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border: solid 2px lightskyblue;
-  border-radius: 999px;
-  background-color: lightskyblue;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: transparent;
   margin: 0 6px 0 6px;
   z-index: 2;
   cursor: pointer;
   transition-duration: .4s;
   box-shadow: 0 0 20px 0 #000;
+}
+
+.inner-label{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: lightskyblue;
+  transition: all .6s linear;
 }
 
 .label4{
@@ -52,7 +61,7 @@ label {
 }
 
 input:checked + label{
-  background-color: transparent;
+  background: skyblue;
 }
 
 input + label:hover::after {
@@ -164,9 +173,8 @@ input:checked + label + .bg4::after {
 
 label:hover {
   background: white;
-  border: 2px solid white;
+  transition: all .6s linear;
 }
-
 
 @media (max-width: 640px) {
   .slider {
